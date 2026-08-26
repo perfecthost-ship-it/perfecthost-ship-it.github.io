@@ -1,20 +1,336 @@
-Lee Holmes
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lee Holmes — Calibration &amp; Embedded Software Engineer</title>
+<style>
+  :root {
+    --paper: #eef1ed;
+    --ink: #1c231f;
+    --ink-soft: #4a5650;
+    --line: #b8c2ba;
+    --accent: #c65d2e;
+    --ok: #3c6e47;
+    --mono: 'IBM Plex Mono', 'SFMono-Regular', Consolas, monospace;
+    --serif: 'Source Serif 4', Georgia, serif;
+  }
 
-Engineer & Developer | Calibration, embedded systems | Rapid learner building tools that solve technical problems.
+  * { box-sizing: border-box; }
 
-Leicester, UK
+  html { scroll-behavior: smooth; }
 
-I combine hands-on torque and force metrology experience with modern software engineering — building tools that solve real problems in labs and workflows I've actually worked in, not just theoretical ones.
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 17px;
+    line-height: 1.6;
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-position: -1px -1px;
+  }
 
-🔧 Featured project
+  a { color: var(--accent); }
 
-calbench — A working prototype covering data entry, calibration maths, BS EN ISO 6789 certificates, Code 128 barcode labels, and a searchable SQLite store. Built to demonstrate software engineering ability alongside torque and force metrology experience.
+  .sheet {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
 
-🛠 Other projects
-techcompanion-v5.3 — AI-powered setup guide generator (React + Capacitor)
-Arc-Raiders-Companion — Blueprint guide app for Arc Raiders
-📬 Contact
+  /* ---------- Header / masthead ---------- */
+  header.masthead {
+    background: var(--paper);
+    border-bottom: 3px solid var(--ink);
+    padding: 56px 0 28px;
+  }
 
-Open to calibration and embedded/software roles.
+  .tag {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+  }
 
-Reach me at: unbehavable@outlook.com
+  .tag::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    background: var(--ok);
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px rgba(60,110,71,0.15);
+  }
+
+  h1 {
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    margin: 0 0 10px;
+    letter-spacing: -0.01em;
+    line-height: 1.05;
+  }
+
+  .role {
+    font-family: var(--mono);
+    font-size: 14px;
+    color: var(--ink-soft);
+    letter-spacing: 0.02em;
+  }
+
+  .role span { color: var(--ink); }
+
+  .meta-strip {
+    margin-top: 26px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    border-top: 1px solid var(--line);
+    font-family: var(--mono);
+    font-size: 12px;
+  }
+
+  .meta-strip div {
+    padding: 12px 22px 0 0;
+    margin-right: 22px;
+    border-right: 1px solid var(--line);
+  }
+
+  .meta-strip div:last-child { border-right: none; }
+
+  .meta-strip label {
+    display: block;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 10px;
+    margin-bottom: 4px;
+  }
+
+  /* ---------- Sections ---------- */
+  section { padding: 46px 0; border-bottom: 1px solid var(--line); }
+  section:last-of-type { border-bottom: none; }
+
+  .section-label {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--accent);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+
+  .section-label::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+  }
+
+  .lede {
+    font-size: 1.15rem;
+    max-width: 60ch;
+  }
+
+  /* ---------- Project cards ---------- */
+  .project {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 18px;
+    padding: 22px 0;
+    border-top: 1px dashed var(--line);
+  }
+  .project:first-of-type { border-top: none; }
+
+  .project .id {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ink-soft);
+    padding-top: 3px;
+  }
+
+  .project h3 {
+    margin: 0 0 8px;
+    font-size: 1.2rem;
+  }
+
+  .project h3 a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent);
+  }
+  .project h3 a:hover { color: var(--accent); }
+
+  .project p {
+    margin: 0 0 10px;
+    color: var(--ink-soft);
+    font-size: 0.98rem;
+  }
+
+  .project .stack {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .featured-flag {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ok);
+    border: 1px solid var(--ok);
+    padding: 2px 7px;
+    border-radius: 2px;
+    margin-bottom: 10px;
+  }
+
+  /* ---------- Contact ---------- */
+  .contact-block {
+    background: var(--ink);
+    color: var(--paper);
+    border-radius: 3px;
+    padding: 32px 28px;
+    margin-top: 6px;
+  }
+
+  .contact-block .section-label { color: #e0a583; }
+  .contact-block .section-label::after { background: #3a453e; }
+
+  .contact-block p { color: #cfd6cf; max-width: 55ch; }
+
+  .contact-row {
+    margin-top: 18px;
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    font-family: var(--mono);
+    flex-wrap: wrap;
+  }
+
+  .contact-row a {
+    color: var(--paper);
+    text-decoration: none;
+    font-size: 1.25rem;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 2px;
+  }
+  .contact-row a:hover { color: var(--accent); }
+
+  .contact-row .copy-btn {
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    background: none;
+    border: 1px solid #4a5650;
+    color: #cfd6cf;
+    padding: 5px 10px;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+  .contact-row .copy-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+  footer {
+    padding: 28px 0 60px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink-soft);
+    text-align: center;
+  }
+
+  @media (max-width: 560px) {
+    .project { grid-template-columns: 1fr; }
+    .project .id { padding-top: 0; }
+    .meta-strip { flex-direction: column; }
+    .meta-strip div { border-right: none; border-top: 1px solid var(--line); padding-top: 10px; margin-right: 0; }
+    .meta-strip div:first-child { border-top: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="sheet">
+    <div class="tag">Available — open to work</div>
+    <h1>Lee Holmes</h1>
+    <div class="role">Calibration engineer turned <span>software &amp; embedded developer</span></div>
+
+    <div class="meta-strip">
+      <div><label>Location</label>Leicester, UK</div>
+      <div><label>Domain</label>Torque &amp; force metrology</div>
+      <div><label>Also builds</label>Embedded &amp; web tools</div>
+    </div>
+  </div>
+</header>
+
+<main class="sheet">
+
+  <section id="about">
+    <div class="section-label">Profile</div>
+    <p class="lede">I combine hands-on torque and force metrology experience with modern software engineering — building tools that solve real problems in labs and workflows I've actually worked in, not theoretical ones.</p>
+  </section>
+
+  <section id="work">
+    <div class="section-label">Selected work</div>
+
+    <div class="project">
+      <div class="id">01</div>
+      <div>
+        <span class="featured-flag">Featured</span>
+        <h3><a href="https://github.com/perfecthost-ship-it/calbench" target="_blank" rel="noopener">calbench</a></h3>
+        <p>A working prototype covering data entry, calibration maths, BS&nbsp;EN&nbsp;ISO&nbsp;6789 certificates, Code&nbsp;128 barcode labels, and a searchable SQLite store — built to demonstrate software engineering ability alongside torque and force metrology experience.</p>
+        <div class="stack">Python · SQLite · Vanilla JS · No framework</div>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="id">02</div>
+      <div>
+        <h3><a href="https://github.com/perfecthost-ship-it/techcompanion-v5.3" target="_blank" rel="noopener">techcompanion-v5.3</a></h3>
+        <p>AI-powered setup guide generator with full engineering &amp; test documentation.</p>
+        <div class="stack">React · Capacitor</div>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="id">03</div>
+      <div>
+        <h3><a href="https://github.com/perfecthost-ship-it/Arc-Raiders-Companion" target="_blank" rel="noopener">Arc-Raiders-Companion</a></h3>
+        <p>Blueprint guide companion app for Arc Raiders.</p>
+        <div class="stack">JavaScript</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="contact-block">
+      <div class="section-label">Contact</div>
+      <p>Open to calibration and embedded/software roles. Get in touch directly — no forms, no gatekeeping.</p>
+      <div class="contact-row">
+        <a href="mailto:unbehavable@outlook.com">unbehavable@outlook.com</a>
+        <button class="copy-btn" onclick="navigator.clipboard.writeText('unbehavable@outlook.com'); this.textContent='Copied'; setTimeout(()=>this.textContent='Copy',1500)">Copy</button>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="sheet">Built &amp; maintained by Lee Holmes — GitHub Pages</div>
+</footer>
+
+</body>
+</html>
