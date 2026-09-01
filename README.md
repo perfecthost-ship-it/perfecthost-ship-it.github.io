@@ -4,7 +4,7 @@ Engineer & Developer | Calibration, embedded systems | Rapid learner building to
 
 Leicester, UK
 
-I combine hands-on torque and force metrology experience with modern software engineering — building tools that solve real problems in labs and workflows I've actually worked in, not just theoretical ones.
+I combine hands-on engineering, assembly, torque and force metrology experience with modern software engineering — building tools that solve real problems in labs and workflows I've actually worked in, not just theoretical ones.
 
 Featured project
 
@@ -15,6 +15,6 @@ techcompanion-v5.3 — AI-powered setup guide generator (React + Capacitor)
 Arc-Raiders-Companion — Blueprint guide app for Arc Raiders
 Contact
 
-Open to test,calibration,engineering and embedded/software roles.
+Open to engineering,test,calibration,and embedded/software roles.
 
-Reach me at: unbehavable@outlook.com
+Reach me at: StrucktureFK@outlook.com
